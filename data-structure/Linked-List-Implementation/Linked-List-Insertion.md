@@ -16,7 +16,6 @@ O(1) for time because I edit the same list.
 ## Solution
 
 
-#region Code Challenge 06 Part
 
         /// <summary>
         /// Add new node that contains the data at the end of list
@@ -137,5 +136,5 @@ O(1) for time because I edit the same list.
             }
         }
 
-        #endregion
+        
 
