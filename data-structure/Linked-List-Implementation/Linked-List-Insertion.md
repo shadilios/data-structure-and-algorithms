@@ -6,7 +6,8 @@ Write 3 functions that handles Insertion functionalities of a linked list:
 3. InsertAfter: (Adds a new node after a specific node).
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+
+![Linked_List_Insertion](https://user-images.githubusercontent.com/70282602/162588316-9b7033e8-202d-429a-a87b-18f387a653d3.png)
 
 ## Approach & Efficiency
 
