@@ -15,7 +15,7 @@ O(1) for time because I edit the same list.
 
 ## Solution
 
-``
+
 #region Code Challenge 06 Part
 
         /// <summary>
@@ -138,4 +138,4 @@ O(1) for time because I edit the same list.
         }
 
         #endregion
-``
+
