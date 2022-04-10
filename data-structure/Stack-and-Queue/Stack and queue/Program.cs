@@ -2,7 +2,8 @@
 
 namespace Stack_and_queue
 {
-    
+    //test
+
     public class Node
     {
         public int data;
