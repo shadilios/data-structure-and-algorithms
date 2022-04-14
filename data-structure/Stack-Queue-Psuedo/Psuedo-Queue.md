@@ -10,6 +10,19 @@ Write a Queue class that implements 2 Stacks with Enqueue & Dequeue Functions.
 
 ![2022-04-14 04_50_40-Window](https://user-images.githubusercontent.com/70282602/163298079-272c155e-b79d-49e1-a971-a95856ebeb14.png)
 
+
+
+<br><hr><br>
+### Effeciency: 
+
+Enqueue:
+- Time : O(1)
+- Space: O(1)
+
+Dequeue:
+- Time: O(n), because I use a while loop.
+- Space: O(1)
+
 <br><hr><br>
 ### Code: 
 
