@@ -45,14 +45,14 @@ Space: O(1) because we retrieve a single value in all functions.
 ## API
 <!-- Description of each method publicly available to your Stack and Queue-->
 
-2. Stack Class: Implement a stack class with a top property, and the following functions:
+* Stack Class Functions:
     * Push: Adds a new node with a passed value to the top of the stack with an O(1) Time performance.
     * Pop: Removes the value from node from the top of the stack & returns it.
     * Peek: Returns the value of the node located at the top of the stack.
     * IsEmpty: Returns true or false whether the stack is empty.
 
 
-4. Queue Class: Implement a queue class with rear and front properties, and the following functions:
+* Queue Class Functions: 
     * Enqueue: Adds a new node with a passed value to the back of the queue with an O(1) Time performance.
     * Dequeue: Removes the node from the front of the queue & returns it.
     * Peek: Returns the value of the node located at the front of the queue.
