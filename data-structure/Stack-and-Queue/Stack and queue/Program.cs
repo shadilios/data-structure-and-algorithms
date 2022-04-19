@@ -43,7 +43,7 @@ namespace Stack_and_queue
 
             if (top == null)
             {
-                Console.WriteLine("Stack is empty");
+                throw new Exception("Stack is empty");
             }
             else
             {
@@ -69,14 +69,16 @@ namespace Stack_and_queue
         /// <returns>bool</returns>
         public bool IsEmpty()
         {
-            bool isEmpty = true;
-
-            if (top != null)
+            if (top == null)
             {
-                isEmpty = false;
+                return true;
+                throw new Exception("Stack is empty");
+            }
+            else
+            {
+                return false;
             }
 
-            return isEmpty;
         }
 
         /// <summary>
@@ -164,20 +166,18 @@ namespace Stack_and_queue
         /// Returns the value of the front node
         /// </summary>
         /// <returns>Int</returns>
-        public int Peek()
+        public int? Peek()
         {
-            int result = 0;
-
-            if (!IsEmpty())
+            if (front != null)
             {
-                result = front.data;
+                return front.data;
             }
             else
             {
                 Console.WriteLine("Queue is empty");
-            }
+                return null;
 
-            return result;
+            }
         }
 
         /// <summary>
@@ -186,14 +186,13 @@ namespace Stack_and_queue
         /// <returns>bool</returns>
         public bool IsEmpty()
         {
-            bool result = false;
 
-            if (rear != null)
+            if (front ==null)
             {
-                result = true;
+                return true;
             }
 
-            return result;
+            return false;
         }
     }
 
@@ -205,16 +204,24 @@ namespace Stack_and_queue
     {
         static void Main(string[] args)
         {
-            Stack stack = new Stack();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
+            //Stack stack = new Stack();
+            //stack.Push(1);
+            //stack.Push(2);
+            //stack.Push(3);
+            //stack.Push(4);
+            //stack.Push(5);
 
-            stack.Pop();
+            //stack.Pop();
 
-            stack.Print();
+            //stack.Print();
+
+            //Queue queue = new Queue();
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+
+            //Console.WriteLine(queue.Peek()); 
+
 
         }
     }
