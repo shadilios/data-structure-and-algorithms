@@ -250,6 +250,28 @@ namespace Linked_List
 
         #endregion
 
+
+        #region Code 9 
+
+        public void Reverse()
+        {
+            Node prev = null;
+            Node current = headNode;
+            Node next = null;
+
+            while (current != null)
+            {
+                next = current.next;
+                current.next = prev;
+                prev = current;
+                current = next;
+            }
+
+            headNode = prev;
+        }
+
+        #endregion
+
     }
 
     internal class Program
@@ -272,14 +294,19 @@ namespace Linked_List
 
             Console.WriteLine(list.ConvertToString());
 
-            Console.WriteLine(list.Kth(0));
-            Console.WriteLine(list.Kth(1));
-            Console.WriteLine(list.Kth(2));
-            Console.WriteLine(list.Kth(3));
-            Console.WriteLine(list.Kth(4));
-            Console.WriteLine(list.Kth(5));
-            Console.WriteLine(list.Kth(6));
-            Console.WriteLine(list.Kth(-6));
+            list.Reverse();
+
+            Console.WriteLine(list.ConvertToString());
+
+
+            ////Console.WriteLine(list.Kth(0));
+            ////Console.WriteLine(list.Kth(1));
+            ////Console.WriteLine(list.Kth(2));
+            ////Console.WriteLine(list.Kth(3));
+            ////Console.WriteLine(list.Kth(4));
+            ////Console.WriteLine(list.Kth(5));
+            ////Console.WriteLine(list.Kth(6));
+            ////Console.WriteLine(list.Kth(-6));
 
 
 

@@ -18,8 +18,6 @@ namespace Stack_Queue_Psuedo
             q.Enqueue(6);
             q.Enqueue(7);
 
-
-
             Console.WriteLine($"Queue Peek: {q.Peek()}");
 
             Console.WriteLine("*******");

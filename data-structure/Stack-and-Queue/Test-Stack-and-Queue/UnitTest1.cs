@@ -6,17 +6,7 @@ namespace Test_Stack_and_Queue
 {
     public class UnitTest1
     {
-        /*
-        rest to do:
-        Calling pop or peek on empty stack raises exception
-        Can successfully enqueue into a queue
-        Can successfully enqueue multiple values into a queue
-        Can successfully dequeue out of a queue the expected value
-        Can successfully peek into a queue, seeing the expected value
-        Can successfully empty a queue after multiple dequeues
-        Can successfully instantiate an empty queue
-        Calling dequeue or peek on empty queue raises exception
-        */
+        
 
         //test
 
@@ -87,6 +77,83 @@ namespace Test_Stack_and_Queue
             Stack stack = new Stack();
 
             Assert.Null(stack.top);
+        }
+
+
+        [Fact]
+        public void CanEnqueue()
+        {
+            Queue queue = new Queue();
+
+            queue.Enqueue(1);
+
+            Assert.Equal(1, queue.front.data);
+
+        }
+
+        [Fact]
+        public void CanEnqueueMultiple()
+        {
+            Queue queue = new Queue();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+            Assert.Equal(1, queue.front.data);
+            Assert.Equal(3, queue.rear.data);
+
+        }
+
+        [Fact]
+        public void CanDequeue()
+        {
+            Queue queue = new Queue();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+            Assert.Equal(1, queue.Dequeue());
+            Assert.Equal(2, queue.Dequeue());
+            Assert.Equal(3, queue.Dequeue());
+
+        }
+
+        [Fact]
+        public void CanPeekQueue()
+        {
+            Queue queue = new Queue();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+            Assert.Equal(1, queue.Peek());
+        }
+
+        [Fact]
+        public void CanEmptyQueue()
+        {
+            Queue queue = new Queue();
+
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+
+            queue.Dequeue();
+            queue.Dequeue();
+            queue.Dequeue();
+
+            Assert.Null(queue.front);
+        }
+
+        [Fact]
+        public void CanInstantiateEmptyQueue()
+        {
+            Queue queue = new Queue();
+
+            Assert.Null(queue.front);   
         }
 
 
