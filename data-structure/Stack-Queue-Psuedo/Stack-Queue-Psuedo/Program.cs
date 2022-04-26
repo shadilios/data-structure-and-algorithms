@@ -18,12 +18,67 @@ namespace Stack_Queue_Psuedo
             q.Enqueue(6);
             q.Enqueue(7);
 
+            Console.WriteLine($"Queue Peek: {q.Peek()}");
+
+            Console.WriteLine("*******");
+
             q.Dequeue();
+            Console.WriteLine("Dequeued!");
 
-            Console.WriteLine(q.Peek());
-            Console.WriteLine(q.Size);
+            Console.WriteLine("*******");
 
-            
+
+            Console.WriteLine($"Queue Peek: {q.Peek()}");
+
+            Console.WriteLine("*******");
+
+
+            q.Enqueue(11);
+            Console.WriteLine("Enqueued 11");
+
+
+            Console.WriteLine("*******");
+
+            q.Enqueue(12);
+            Console.WriteLine("Enqueued 12");
+
+            Console.WriteLine("*******");
+
+            q.Enqueue(13);
+            Console.WriteLine("Enqueued 13");
+
+
+            Console.WriteLine("*******");
+
+
+            q.Dequeue();
+            Console.WriteLine("Dequeued!");
+
+            Console.WriteLine("*******");
+
+            q.Dequeue();
+            Console.WriteLine("Dequeued!");
+
+            Console.WriteLine("*******");
+
+
+            Console.WriteLine($"Queue Peek: {q.Peek()}");
+
+
+
+
+
+
+            //Console.WriteLine(q.Peek());
+            //Console.WriteLine(q.Size);
+
+            //q.Dequeue();
+
+
+            //Console.WriteLine(q.Peek());
+
+
+
         }
     }
 
@@ -106,7 +161,7 @@ namespace Stack_Queue_Psuedo
 
         public Stack addingStack;
         public Stack removingStack;
-
+        
         public int Size
         {
             get { return addingStack.size + removingStack.size; }
@@ -135,12 +190,9 @@ namespace Stack_Queue_Psuedo
 
         public void MoveToRemoveStack()
         {
-            if (removingStack.Size() == 0)
+            while (addingStack.Size() != 0)
             {
-                while (addingStack.Size() != 0)
-                {
-                    removingStack.Push(addingStack.Pop());
-                }
+                removingStack.Push(addingStack.Pop());
             }
         }
 
