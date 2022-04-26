@@ -1,6 +1,8 @@
 # Trees
 <!-- Short summary or background information -->
 
+![img](https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png)
+
 Tree is a data structre that lets us manage our data in a tree-like shape, with each node containing value & 2 pointers to left & right.  
 Each node is a root except the ones that are considered leafs (A node with no children, or null left & right).
 
