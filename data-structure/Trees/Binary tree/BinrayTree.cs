@@ -62,5 +62,28 @@ namespace TREE
 
         }
 
+
+
+        public int? Max()
+        {
+            int? output = null;
+            /*
+             * Check if Tree is null, if yes return error it's empty
+             * Save root value, compare it to left & right
+             * compare each left and right to its each left & right
+            */
+
+           // Traverse whole tree, save max value, if while traversing I find a higher value, that's my new high value, if Not, I keep my old value
+
+            // If this was binary tree, go directly to value of  leaf after Root.right.right.right * h ...etc
+
+
+            return output;
+        }
+
+
+
+
+
     }
 }
