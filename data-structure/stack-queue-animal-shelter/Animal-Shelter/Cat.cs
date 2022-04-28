@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Animal_Shelter
 {
-    public class Cat
+    public class Cat : Animal
     {
-        public string Name { get; set; }
+        public override string Type { get { return "cat"; } }
 
-        public Cat(string name)
+        public Cat(string name, int age)
         {
             this.Name = name;
+            this.Age = age;
         }
 
-        
+
     }
 }
