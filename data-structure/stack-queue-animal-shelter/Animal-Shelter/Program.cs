@@ -7,23 +7,26 @@ namespace Animal_Shelter
         static void Main(string[] args)
         {
 
-            Dog dog1 = new Dog("Poppy");
-            Dog dog2 = new Dog("Kayn");
-            Dog dog3 = new Dog("Rex");
-
-            Cat cat1 = new Cat("Yumi");
-            Cat cat2 = new Cat("Neko");
-            Cat cat3 = new Cat("Mix");
-
             Shelter shelter = new Shelter();
 
-            shelter.EnqueueCat(cat1);
-            shelter.EnqueueCat(cat2);
-            shelter.EnqueueCat(cat3);
+            Dog dog1 = new Dog("Rex", 3);
+            Dog dog2 = new Dog("Poppy", 2);
+            Dog dog3 = new Dog("Dobber", 7);
 
-            shelter.Dequeue();
+            Cat cat1 = new Cat("Lola", 6);
+            Cat cat2 = new Cat("Lilly", 1);
+            Cat cat3 = new Cat("Kata", 2);
 
+            shelter.Enqueue(dog1);
+            shelter.Enqueue(cat2);
+            shelter.Enqueue(dog2);
+            shelter.Enqueue(dog3);
+            shelter.Enqueue(cat1);
+            shelter.Enqueue(cat3);
 
+            Animal a = shelter.Dequeue("cat");
+
+            Console.WriteLine(a.Name);
         }
     }
 }

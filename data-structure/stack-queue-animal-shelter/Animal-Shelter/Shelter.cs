@@ -9,131 +9,62 @@ namespace Animal_Shelter
     public class Shelter
     {
 
-        public Node rear;
-        public Node front;
+        public Queue<Animal> Animals = new Queue<Animal>();
+        public Queue<Animal> SecondQueue = new Queue<Animal>();
 
-        public Shelter()
+
+
+        public void Enqueue(Animal animal)
         {
-            rear = null;
-            front = null;
+            Animals.Enqueue(animal);
         }
 
-
-        //Enqueue Dog
-        public void EnqueueDog(Dog dog)
+        public Animal Dequeue(string type)
         {
-            Node newNode = new Node(dog);
-
-            if (front == null)
+            if (Animals.Count + SecondQueue.Count == 0)
             {
-                rear = newNode;
-                front = newNode;
+                throw new Exception("SHELTER HAS NO ANIMALS!!");
             }
-            else
-            {
-                rear.next = newNode;
-                rear = newNode;
-            }
-            
-        }
 
-        //Enqueue Cat
-        public void EnqueueCat(Cat cat)
-        {
-            Node newNode = new Node(cat);
 
-            if (front == null)
-            {
-                rear = newNode;
-                front = newNode;
-            }
-            else
-            {
-                rear.next = newNode;
-                rear = newNode;
-            }
-        }
+            Animal anim = null;
 
-        //Dequeue Dog
-        public Dog DequeueDog()
-        {
-            Dog dog = null;
 
-            if (front!= null)
+            if (SecondQueue.Count == 0)
             {
-                if (front.next != null)
+                while (Animals.Peek().Type != type)
                 {
-                    dog = front.dog;
-                    front = front.next;
-                }
-                else
-                {
-                    dog = front.dog;
-                    front = null;
-                    rear = null;
+                    SecondQueue.Enqueue(Animals.Dequeue());
+                    
+                    if (Animals.Peek().Type == type)
+                    {
+                        anim = Animals.Dequeue();
+                        break;
+                    }
                 }
             }
 
-            return dog;
-        }
-
-        //Dequeue Cat
-        public Cat DequeueCat()
-        {
-            Cat cat = null;
-
-            if (front != null)
+            else if(SecondQueue.Count > 0)
             {
-                if (front.next != null)
+                while (SecondQueue.Peek().Type != type)
                 {
-                    cat = front.cat;
-                    front = front.next;
-                }
-                else
-                {
-                    cat = front.cat;
-                    front = null;
-                    rear = null;
-                }
-            }
+                    Animals.Enqueue(SecondQueue.Dequeue());
 
-
-            return cat;
-        }
-
-        //General function to decide which function to call
-        public void Dequeue()
-        {
-            if (front == null)
-            {
-                Console.WriteLine("Shelter is empty!");
-            }
-            else
-            {
-                if (front.Type == "Cat")
-                {
-                    DequeueCat();
-                }
-                else if (front.Type == "Dog")
-                {
-                    DequeueDog();
+                    if (SecondQueue.Peek().Type == type)
+                    {
+                        anim = SecondQueue.Dequeue();
+                        break;
+                    }
                 }
             }
 
             
+
+
+
+            return anim;
+            
         }
-
-        //public void Print()
-        //{
-        //    Node temp = rear;
-
-        //    while (rear != null)
-        //    {
-        //        Console.WriteLine($"{temp.Type} ->");
-        //        temp = temp.next;
-        //    }
-        //}
-
 
     }
 }
