@@ -76,15 +76,6 @@ namespace TREE
         }
 
 
-        public int? Max()
-        {
-            int output;
-
-
-
-            return null;
-        }
-
 
 
     }
