@@ -9,14 +9,14 @@ Implement a Shelter class that acts as a queue collection, With Enqueue & Dequeu
 <br><hr><br>
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![2022-04-19 03_59_39-Window](https://user-images.githubusercontent.com/70282602/163899642-687a48f3-2911-4ba6-bfd3-d7943225151f.png)
+![2022-04-29 02_00_18-Window](https://user-images.githubusercontent.com/70282602/165861204-42d6e87f-4379-4cc0-8e93-a16fd3031c9f.png)
 
 <br><hr><br>
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-Time: O(1) because we're Adding a single node with no looping.  
-Space: O(1) because we're returning a single node with no looping.  
+Time: O(n) because we're looping in the dequeue function based on n elements count. 
+Space: O(1) because we're returning a single entity. 
 
 <br><hr><br>
 ## Solution
