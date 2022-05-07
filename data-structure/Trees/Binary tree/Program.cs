@@ -6,6 +6,8 @@ namespace TREE
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hi");
+
             BST x = new BST();
             Console.WriteLine("&");
 
