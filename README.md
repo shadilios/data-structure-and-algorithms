@@ -9,3 +9,4 @@
 
 
 - 11: Psuedo-Queue [Link](https://github.com/shadilios/data-structure-and-algorithms/blob/main/data-structure/Stack-Queue-Psuedo/Psuedo-Queue.md)
+- 27: Merge Sort: [Link](https://github.com/shadilios/data-structure-and-algorithms/tree/main/code-challenges/code27-merge-sort/Merge-Sort)
