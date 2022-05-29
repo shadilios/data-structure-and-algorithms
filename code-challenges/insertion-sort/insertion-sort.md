@@ -12,7 +12,7 @@ Write a function that takes an array and sort it directly without returning a ne
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-Time: O(n) : Nested loops.  
+Time: O(n^2) : Nested loops.  
 Space: O(1) : Returning the same array.
 
 ## Solution
