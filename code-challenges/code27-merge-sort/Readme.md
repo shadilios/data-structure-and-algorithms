@@ -1,26 +1,29 @@
-﻿using System;
+# Challenge Summary
+<!-- Description of the challenge -->
 
-namespace Merge_Sort
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            int[] x = new int[] { 5, 2, 3, 9};
+Implement a Merge sort algorithm.
 
-            MergeSort(x);
+Blog: [Link](./Blog.md)
 
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
 
-            for (int i = 0; i < x.Length; i++)
-            {
-                Console.WriteLine(x[i]);
-            }
-            
-        }
+![](./imgs/whiteboard.png)
 
 
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
-        public static int[] MergeSort(int[] arr)
+Time complexity: Ο(n log n).
+Space Complexity: O(n).
+
+
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+
+```
+public static int[] MergeSort(int[] arr)
         {
             int n = arr.Length;
 
@@ -75,16 +78,4 @@ namespace Merge_Sort
 
             return arr;
         }
-        
-
-    }
-
-
-
-
-
-
-
-
-
-}
+        ```
