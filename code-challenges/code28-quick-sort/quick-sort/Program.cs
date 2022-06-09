@@ -2,9 +2,9 @@
 
 namespace quick_sort
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int[] array = { 4, 1, 2, 3 };
 
