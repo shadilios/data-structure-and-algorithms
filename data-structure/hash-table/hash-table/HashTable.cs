@@ -87,5 +87,6 @@ namespace hash_table
 
             return key % size;
         }
+
     }
 }
