@@ -24,5 +24,22 @@ namespace Graph
 
             return vertexToAdd;
         }
+
+
+
+        #region CC36 Breadth first
+
+        public LinkedList<Vertex> BreadthFirst(Vertex vertex)
+        {
+            // Do I need to reset the is visited?
+
+
+            LinkedList<Vertex> visitedList = new LinkedList<Vertex>();
+
+            // I need to set the node where to traverse from to isVisited
+        }
+
+
+        #endregion
     }
 }
