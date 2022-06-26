@@ -11,12 +11,14 @@ namespace Graph
         public int value;
         public bool isVisited;
         public List<Vertex> neighbours;
+        public List<Edge> edges;
 
-        public Vertex(int value, List<Vertex> neighbours)
+        public Vertex(int value)
         {
             this.value = value;
             isVisited = false;
-            this.neighbours = neighbours;
+            this.edges = new List<Edge>();
+            this.neighbours = new List<Vertex>();
         }
 
         
