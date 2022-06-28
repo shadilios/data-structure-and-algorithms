@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace hash_table
 {
@@ -31,7 +28,7 @@ namespace hash_table
 
             if (hashTable[index] == null)
             {
-              hashTable[index] = new Node(key, value);
+                hashTable[index] = new Node(key, value);
             }
             else
             {
@@ -62,7 +59,7 @@ namespace hash_table
         }
 
 
-        public List<int>  Keys()
+        public List<int> Keys()
         {
             // loop over array
             // if element is not null, take the key and add it to a list
@@ -87,6 +84,7 @@ namespace hash_table
 
             return key % size;
         }
+
 
 
         //IT MUST BE STATIC, OR NON STATIC AND DO SOMETHING LIKE ht1.LeftJoin(ht2);
@@ -116,6 +114,46 @@ namespace hash_table
             }
             return result;
         }
+
+        // This won't work, my function takes int and it needs to take strings
+        public static string RepeatedWord(string text)
+        {
+            if (text == null)
+            {
+                return null;
+            }
+
+            //to lower
+            text = text.ToLower();
+
+            //cleaning
+            text = text.Replace(",", "");
+            text = text.Replace(".", "");
+            text = text.Replace("!", "");
+            text = text.Replace("?", "");
+            text = text.Replace("/", "");
+            text = text.Replace("&", "");
+
+            string[] seperatedText = text.Split(" ");
+
+            //fix: this will create a table with length equal to all words so repeated ones will also have an empty space
+            HashTable table = new HashTable(seperatedText.Length);
+
+            for (int i = 0; i < seperatedText.Length; i++)
+            {
+                if (table.Contains(seperatedText[i]))
+                {
+
+                }
+            }
+
+
+
+
+
+        }
+
+
 
     }
 }
