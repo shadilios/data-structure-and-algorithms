@@ -88,5 +88,34 @@ namespace hash_table
             return key % size;
         }
 
+
+        //IT MUST BE STATIC, OR NON STATIC AND DO SOMETHING LIKE ht1.LeftJoin(ht2);
+        public static List<string> LeftJoin(HashTable ht1, HashTable ht2)
+        {
+            List<string> result = new List<string>();
+
+            List<int> listOfKeys = ht1.Keys();
+            foreach (int key in listOfKeys)
+            {
+                string word1 = $"{key}";
+                string word2 = "NULL";
+                string word3 = "NULL";
+
+                if (ht1.Get(key) != null)
+                {
+                    word2 = $"{ht1.Get(key)}";
+                }
+                if (ht2.Contains(key) == true)
+                {
+                    word3 = $"{ht2.Get(key)}";
+                }
+
+                string row = $"{word1}, {word2}, {word3}";
+
+                result.Add(row);
+            }
+            return result;
+        }
+
     }
 }
