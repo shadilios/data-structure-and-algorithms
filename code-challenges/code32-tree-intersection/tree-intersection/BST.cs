@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace tree_intersection
 {
-    internal class BST
+    public class BST
     {
-        public Node root;
+        public TreeNode root;
         public int count;
         public BST()
         {
@@ -20,7 +20,7 @@ namespace tree_intersection
         {
             if (root == null)
             {
-                root = new Node(value);
+                root = new TreeNode(value);
             }
             else
             {
@@ -30,13 +30,13 @@ namespace tree_intersection
             count++;
         }
 
-        public void AddRecursive(Node node, int value)
+        public void AddRecursive(TreeNode node, int value)
         {
             //Start with the root node
-            Node current = root;
+            TreeNode current = root;
 
             // pointer to store the parent of the current node
-            Node parent = null;
+            TreeNode parent = null;
 
 
             //if (root == null)
@@ -62,11 +62,11 @@ namespace tree_intersection
 
             if(value < parent.value)
             {
-                parent.left = new Node(value);
+                parent.left = new TreeNode(value);
             }
             else
             {
-                parent.right = new Node(value);
+                parent.right = new TreeNode(value);
             }
 
             //return root;
