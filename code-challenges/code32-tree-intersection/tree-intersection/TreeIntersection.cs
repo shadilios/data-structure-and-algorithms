@@ -6,22 +6,50 @@ using System.Threading.Tasks;
 
 namespace tree_intersection
 {
-    internal class TreeIntersection
+    public class TreeIntersection
     {
-        public static List<string> TreesIntersection(BST x, BST y)
+        static public HashTable hashTableINS = new HashTable(100);
+
+        static public List<int> result = new List<int>();
+
+        public static List<int> TreesIntersection(BST x, BST y)
         {
-            List<string> result = new List<string>();
+            HashTableInsert(x.root);
+            HashTableContains(y.root);
 
-            //P.S my hash table values are strings, we search for keys
-
-            // Take all keys from first tree and put them in a table
-
-            // Take all keys from second tree and put them in another table
-
-            // Compare tables, add matching keys to the list
-
-            // return the list
             return result;
         }
+
+        public static void HashTableInsert(TreeNode root)
+        {
+            if (root.left != null)
+            {
+                HashTableInsert(root.left);
+            }
+            if (root.right != null)
+            {
+                HashTableInsert(root.right);
+            }
+
+            hashTableINS.Set(root.value, root.value.ToString());
+        }
+
+        public static void HashTableContains(TreeNode root)
+        {
+            if (root.left != null)
+            {
+                HashTableContains(root.left);
+            }
+            if (root.right != null)
+            {
+                HashTableContains(root.right);
+            }
+            if (hashTableINS.Contains(root.value))
+            {
+                result.Add(root.value);
+            }
+        }
+
+        
     }
 }
