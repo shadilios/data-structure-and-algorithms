@@ -94,14 +94,16 @@ namespace GraphImplementation
         }
 
 
-        public List<GraphNode<T>> BreadthFirst(GraphNode<T> node)
+        public List<GraphNode<T>> BreadthFirst(T value)
         {
+            GraphNode<T> startNode = Find(value);
+
             List<GraphNode<T>> nodes = new List<GraphNode<T>>();
             Queue<GraphNode<T>> breadth = new Queue<GraphNode<T>>();
             List<GraphNode<T>> visited = new List<GraphNode<T>>();
 
-            breadth.Enqueue(node);
-            visited.Add(node);
+            breadth.Enqueue(startNode);
+            visited.Add(startNode);
 
             while (breadth.Count > 0)
             {
@@ -121,26 +123,7 @@ namespace GraphImplementation
         }
         
 
-        public Queue<GraphNode<T>> BreadthFirst(T value)
-        {
-            //NOTE:
-            // in the requirements, it just asks us to implement a function that returns a list of visited nodes
-            // no specific order was specified
-            // the stretch goal is to implement something that checks for edges
-            // and i will do that once we're done with ecommerce, but for now
-            // it's not a requirement
-
-            Queue<GraphNode<T>> visited = new Queue<GraphNode<T>>();
-
-            while (nodes.Count > 0)
-            {
-                foreach (var item in nodes)
-                {
-                    visited.Enqueue(item);
-                }
-            }
-            return visited;
-        }
+        
 
         //
         //
