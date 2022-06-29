@@ -1,24 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace tree_intersection
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
            
             BST bst = new BST();
-
             bst.Add(8);
             bst.Add(3);
             bst.Add(1);
             bst.Add(6);
-            bst.Add(10);
-            bst.Add(14);
-            bst.Add(13);
-            bst.Add(4);
-            bst.Add(7);
+            
 
+
+            BST bst2 = new BST();
+            bst2.Add(9);
+            bst2.Add(3);
+            bst2.Add(1);
+            bst2.Add(6);
+           
+           
+
+            List<int> x = TreeIntersection.TreesIntersection(bst, bst2);
+
+
+            foreach (var item in x)
+            {
+                Console.WriteLine(item);
+            }
 
 
 

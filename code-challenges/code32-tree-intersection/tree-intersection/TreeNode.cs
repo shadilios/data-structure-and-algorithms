@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace tree_intersection
 {
-    internal class Node
+    public class TreeNode
     {
         public int value;
-        public Node right;
-        public Node left;
+        public TreeNode right;
+        public TreeNode left;
 
-        public Node(int _value)
+        public TreeNode(int _value)
         {
             this.value = _value;
             right = null;
