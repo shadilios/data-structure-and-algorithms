@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Graph
+namespace GraphImplementation
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {

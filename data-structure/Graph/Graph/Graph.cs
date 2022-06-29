@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Graph
+namespace GraphImplementation
 {
     public class Graph<T>
     {
@@ -93,24 +93,62 @@ namespace Graph
             return nodes.Count;
         }
 
-        //#region CC36 Breadth first
 
-        //public LinkedList<GraphNode<T> BreadthFirst(Vertex vertex)
-        //{
-        //    LinkedList<Vertex> visitedOrder = new LinkedList<Vertex>();
+        public List<GraphNode<T>> BreadthFirst(GraphNode<T> node)
+        {
+            List<GraphNode<T>> nodes = new List<GraphNode<T>>();
+            Queue<GraphNode<T>> breadth = new Queue<GraphNode<T>>();
+            List<GraphNode<T>> visited = new List<GraphNode<T>>();
 
-        //    // Do I need to reset the is visited?
-        //    // How can I set nodes to visited if I don't have a visit function?
+            breadth.Enqueue(node);
+            visited.Add(node);
 
+            while (breadth.Count > 0)
+            {
+                GraphNode<T> front = breadth.Dequeue();
+                nodes.Add(front);
 
+                foreach (GraphNode<T> neighbor in GetNeighbors(front.value))
+                {
+                    if (!visited.Contains(neighbor))
+                    {
+                        visited.Add(neighbor);
+                        breadth.Enqueue(neighbor);
+                    }
+                }
+            }
+            return nodes;
+        }
+        
 
+        public Queue<GraphNode<T>> BreadthFirst(T value)
+        {
+            //NOTE:
+            // in the requirements, it just asks us to implement a function that returns a list of visited nodes
+            // no specific order was specified
+            // the stretch goal is to implement something that checks for edges
+            // and i will do that once we're done with ecommerce, but for now
+            // it's not a requirement
 
+            Queue<GraphNode<T>> visited = new Queue<GraphNode<T>>();
 
-        //    return visitedOrder;
-        //}
+            while (nodes.Count > 0)
+            {
+                foreach (var item in nodes)
+                {
+                    visited.Enqueue(item);
+                }
+            }
+            return visited;
+        }
 
+        //
+        //
+        //
+        //
+        //
+        //
 
-        //#endregion
 
         #region extra implementation I studied
 

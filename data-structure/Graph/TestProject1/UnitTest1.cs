@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using Graph;
+using GraphImplementation;
 using System.Collections.Generic;
 
 namespace TestProject1
