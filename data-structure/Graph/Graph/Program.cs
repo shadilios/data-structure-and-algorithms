@@ -9,7 +9,7 @@ namespace GraphImplementation
         {
             Graph<int> graph = new Graph<int>();
 
-            GraphNode<int> x = graph.AddNode(1);
+            graph.AddNode(1);
             graph.AddNode(3);
             graph.AddNode(9);
             graph.AddNode(6);

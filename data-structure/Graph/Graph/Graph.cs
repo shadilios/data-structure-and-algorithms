@@ -10,6 +10,11 @@ namespace GraphImplementation
     {
         public List<GraphNode<T>> nodes = new List<GraphNode<T>>();
 
+        public List<Edge<T>> edges = new List<Edge<T>>();
+
+        //we have to edit the AddEdge function, each time we add 2 nodes, we take weight and implement this list
+        //or make a new function that takes 2 nodes and int, and keep that function as default
+
         public Graph()
         {
 
