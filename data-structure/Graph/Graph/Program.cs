@@ -21,7 +21,7 @@ namespace GraphImplementation
             graph.AddEdge(6, 9);
             graph.AddEdge(9, 99);
 
-            List<GraphNode<int>> y = graph.BreadthFirst(1);
+            List<GraphNode<int>> y = graph.DepthFirst(1);
 
             foreach (var node in y)
             {
