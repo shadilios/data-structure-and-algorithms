@@ -126,9 +126,39 @@ namespace GraphImplementation
             }
             return nodes;
         }
-        
 
-        
+
+        public List<GraphNode<T>> DepthFirst(T value)
+        {
+            GraphNode<T> startNode = Find(value);
+
+            List<GraphNode<T>> nodes = new List<GraphNode<T>>();
+            Stack<GraphNode<T>> depth = new Stack<GraphNode<T>>();
+            List<GraphNode<T>> visited = new List<GraphNode<T>>();
+
+
+            depth.Push(startNode);
+            visited.Add(startNode);
+
+            while (depth.Count > 0)
+            {
+                GraphNode<T> popped = depth.Pop();
+                nodes.Add(popped);
+
+                foreach (GraphNode<T> neighbor in GetNeighbors(popped.value))
+                {
+                    if (!depth.Contains(neighbor))
+                    {
+                        visited.Add(neighbor);
+                        depth.Push(neighbor);
+                    }
+                }
+            }
+            return nodes;
+        }
+
+
+
 
         //
         //
